@@ -19,7 +19,7 @@
     </div>
     <div class="actions" v-if="buttons">
       <button v-if="!polling" class="btn" @click="triggerRunPolling">
-        Run Polling
+        Stream Event
       </button>
       <!-- <button v-if="polling" class="btn" @click="triggerStopPolling">
         Stop Polling
