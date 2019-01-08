@@ -1,6 +1,11 @@
 <template>
   <div class="stage">
-    <h1 class="title">Server Sent Events (SSE) Simulation</h1>
+    <h1 class="title">
+      <img src="/assets/logo.svg" alt="Foobarology" class="logo">
+      <br>
+      Server Sent Events (SSE)
+    </h1>
+
     <client-1-http-path :active="client1HttpActive" :streaming="eventStreamActive" :text="client1HttpText"></client-1-http-path>
     <client-1-app-db-path :active="client1AppDbActive" :text="client1AppDbText"></client-1-app-db-path>
     <client-2-http-path :active="client2HttpActive" :text="client2HttpText"></client-2-http-path>
@@ -316,9 +321,13 @@ body {
 }
 
 .title {
-  margin-top: -50px;
+  margin-top: -100px;
   color: #7B989D;
   font-weight: normal;
+}
+
+.title .logo {
+  clear: both;
 }
 
 .btn {
