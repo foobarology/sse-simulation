@@ -93,17 +93,19 @@ export default {
     }
   },
   mounted () {
-    if (!this.buttons) {
-      setTimeout(() => {
-        this.client1StartPolling();
-      }, 1000);
-
-      window.onkeydown = e => {
-        if (e.ctrlKey && e.keyCode == 13) {
-          this.client2PostMessage();
+    window.onkeydown = e => {
+      if (e.ctrlKey && e.keyCode == 13) {
+        if (this.buttons) {
+          this.buttons = false;
+        } else if (!this.polling) {
+          this.client1StartPolling();
+        } else {
+          if (!this.client2HttpActive) {
+            this.client2PostMessage();
+          }
         }
-      };
-    }
+      }
+    };
   },
   methods: {
     client1StartPolling () {
