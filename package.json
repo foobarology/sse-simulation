@@ -1,0 +1,26 @@
+{
+  "name": "sse-simulation",
+  "license": "MIT",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development parcel index.html ",
+    "build": "cross-env NODE_ENV=production parcel build index.html --public-url /sse-simulation",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "author": "Muhammad Syifa <emsifa@gmail.com>",
+  "homepage": "https://foobarology.github.io/sse-simulation/",
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^2.4.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "cross-env": "^5.2.0",
+    "gh-pages": "^2.0.1",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "dependencies": {
+    "animejs": "^2.2.0",
+    "cssnano": "^4.1.8",
+    "normalize.css": "^8.0.1",
+    "vue": "^2.5.21",
+    "vue-hot-reload-api": "^2.3.1"
+  }
+}
