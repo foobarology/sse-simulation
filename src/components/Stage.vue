@@ -16,8 +16,8 @@
       :notifications-count="notificationsCount"
       :polling="polling"
       :buttons="buttons"
-      @run="client1StartPolling"
-      @stop="client1StopPolling">
+      @run="client1StartStream"
+      @stop="client1StopStream">
     </client-1>
     <app ref="app" :active="client1AppDbActive || client2AppDbActive"></app>
     <database ref="database" :messages="messages"></database>
@@ -39,6 +39,8 @@
       <a target="_blank" href="https://www.instagram.com/foobarology">instagram</a> 
       <span class="sep">/</span>
       <a target="_blank" href="https://www.facebook.com/foobarology">facebook</a> 
+      <span class="sep">/</span>
+      <a target="_blank" href="https://www.github.com/foobarology">github</a> 
     </footer>
   </div>
 </template>
@@ -98,7 +100,7 @@ export default {
         if (this.buttons) {
           this.buttons = false;
         } else if (!this.polling) {
-          this.client1StartPolling();
+          this.client1StartStream();
         } else {
           if (!this.client2HttpActive) {
             this.client2PostMessage();
@@ -108,12 +110,12 @@ export default {
     };
   },
   methods: {
-    client1StartPolling () {
+    client1StartStream () {
       this.polling = true;
       this.client1DoPolling();
     },
     
-    client1StopPolling () {
+    client1StopStream () {
       this.polling = false;
     },
     
