@@ -4,7 +4,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development parcel index.html ",
     "build": "cross-env NODE_ENV=production parcel build index.html --public-url /sse-simulation",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "rm -rf dist && npm run build && gh-pages -d dist"
   },
   "author": "Muhammad Syifa <emsifa@gmail.com>",
   "homepage": "https://foobarology.github.io/sse-simulation/",
